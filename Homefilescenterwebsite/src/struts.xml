@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
+<struts>  
+<package name="default" extends="struts-default">  
+  
+<action name="Signup"  class="mega.dynamicrankingplatform.homefilescenter.Profileactions" method="Signup">  
+<result name="signup successful">/Login.jsp</result>
+  <result name="signup failed">/error.jsp</result>
+  <result name="input">/Signup.jsp</result>
+</action> 
+
+<action name="Login" class="mega.dynamicrankingplatform.homefilescenter.Profilelogin" method="Login">  
+<result name="logged into">/Welcome.jsp</result>
+
+  <result name="login failed">/Error.jsp</result>
+  <result name="input">/Error.jsp</result>
+   
+  
+</action>
+
+<action name="likecomment" class="mega.dynamicrankingplatform.homefilescenter.Likecommentaction" method="likecomment">
+
+<result name="liked">/Welcome.jsp</result>
+<result name="not">/Error.jsp</result>
+
+
+</action>
+<action name="givereview" class="mega.dynamicrankingplatform.homefilescenter.Reviewproduct" method="verifycategory">
+
+<result name="review name">/Postreview.jsp</result>
+<result name="cannot print">/Cannotreview.jsp</result>
+<result name="input">/Givereviews.jsp</result>
+
+</action>
+<action name="Addreview" class="mega.dynamicrankingplatform.homefilescenter.Reviewaction" method="givereview">
+<result name="reviewed">/Welcome.jsp</result>
+<result name="not reviewed">/Failreview.jsp</result>
+<result name="input">/Postreview.jsp</result>
+
+
+</action>
+<action name="displayaddedcat" class="mega.dynamicrankingplatform.homefilescenter.Addcategoryaction" method="displaycat">
+
+<result name="display it">/Displaycat.jsp</result>
+<result name="cant display">/Errordisplaycat.jsp</result>
+<result name="input">/Displaycat.jsp</result>
+
+</action>
+<action name="logout" class="mega.dynamicrankingplatform.homefilescenter.Profilelogin" method="logout">  
+
+
+<result name="logout" type="redirect">/Login.jsp</result>
+<result name="cannot">/Error.jsp</result>
+<result name="input">/Welcome.jsp</result>
+
+
+  </action>
+
+<action name="Addcategory" class="mega.dynamicrankingplatform.homefilescenter.Addcategoryaction" method="Addcat">
+<result name="added category">/Success.jsp</result>
+<result name="not added">/Failure.jsp</result>
+<result name="input">/Denied.jsp</result>
+
+
+</action>
+
+
+
+<action name="Editprofile" class="mega.dynamicrankingplatform.homefilescenter.Profileactions" method="editprofile">  
+<result name="updated successfully">/Login.jsp</result>
+  <result name="update failed">/Welcome.jsp</result>
+   <result name="input">/Welcome.jsp</result>
+</action>
+
+
+
+  
+</package> 
+
+
+
+
+ 
+</struts>
